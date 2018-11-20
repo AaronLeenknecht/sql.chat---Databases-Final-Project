@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="/animate.css">
+    <link rel="stylesheet" href="/style.css">
+
+    <title>sql.chat | A real-time chat application powered by SQL</title>
+
+    <link rel="shortcut icon" href="/img/favicon.png" />
+  </head>
+  <body>
+
+    <nav class="navbar">
+        <img class="mx-auto" src="/img/logo.png" height="100px" width="auto">
+    </nav>
+
+
+
+    <div id="home_container" class="container">
+      <div id="home_info1" class="row">
+        <img class="mx-auto" src="/img/home_text1.png" height="30px" width="auto">
+      </div>
+      <div id="pill_row" class="row">
+        <div class="col-3 offset-3 pill_holder">
+          <div id="pill1" class="card">
+            <div class="card-body">
+                <button id="join_pill_button" type="button" class="pill_button mx-auto">
+                  JOIN
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 pill_holder">
+          <div id="pill2" class="card">
+            <div class="card-body">
+              <button id="login_pill_button" type="button" class="pill_button mx-auto">
+                LOGIN
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal animated" id="joinModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content mx-auto">
+          <div class="modal-header">
+            <span><i class="fas fa-users"></i> Join</span>
+          </div>
+          <div class="modal-body card">
+
+
+            <div id="joinModal_slide1" class="modal_slide animated">
+              <div class="row">
+                <div class="modal_info mx-auto">
+                  Enter a username
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-8 offset-2">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="fas fa-user-tag"></i>
+                      </span>
+                    </div>
+                    <input id="username_input" type="text" class="form-control" placeholder="">
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-6 text-right">
+                  <button type="button" class="btn btn-secondary" data-custom-dismiss="modal">CANCEL</button>
+                </div>
+                <div class="col-6 text-left">
+                  <button id="joinModal_continue1" type="button" class="btn btn-dark">CONTINUE</button>
+                </div>
+              </div>
+            </div>
+
+            <div id="joinModal_slide2" class="modal_slide animated">
+
+              <div class="row">
+                <div class="modal_info mx-auto">
+                  Select a profile picture
+                </div>
+              </div>
+
+              <div class="row">
+                <div id="pic_container" class="row text-center">
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="1">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="2">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="3">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="4">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="5">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="6">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="7">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="8">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                  <div class="col-3 card pic_card">
+                    <button class="pic_card_button" picID="9">
+                      <img class="mx-auto" src="/img/placeholder.png" width="80px" height="80px">
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6 text-right">
+                  <button id="joinModal_back1" type="button" class="btn btn-secondary">BACK</button>
+                </div>
+                <div class="col-6 text-left">
+                  <button id="joinModal_continue2" type="button" class="btn btn-dark">CONFIRM</button>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div id="joinModal_slide3" class="modal_slide animated">
+              <div class="row">
+                <div class="lds-ring mx-auto"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+
+            <div id="joinModal_slide4" class="modal_slide animated">
+
+              <div class="row mt-5">
+                <div class="modal_info mx-auto">
+                  Unique Identifier
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                <div class="col-8 offset-2">
+                  <input id="uniqueid_holder" class="form-control text-center" type="text" placeholder="01234567890" readonly>
+                </div>
+              </div>
+
+
+              <div class="row mt-3">
+                <div class="col-8 offset-2 modal_info_sub mx-auto text-center">
+                  Save this if you wish to come back to your session at a later time. Do not share this code.
+                </div>
+              </div>
+
+              <div class="row mt-5">
+                  <button id="joinModal_continue3" type="button" class="btn btn-dark mx-auto">BEGIN CHATTING</button>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal animated" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content mx-auto">
+          <div class="modal-header">
+            <span><i class="fas fa-users"></i> Login</span>
+          </div>
+          <div class="modal-body card">
+            <button type="button" class="btn btn-secondary mx-auto" data-custom-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal animated" id="dashboardModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content mx-auto">
+          <div class="modal-header">
+            <span><i class="fas fa-comments"></i> Rooms</span>
+          </div>
+          <div class="modal-body card">
+            <div id="room_container" class="row">
+
+              <div class="col-2 room_card_outer">
+                <div class="card room_card_inner">
+
+                </div>
+              </div>
+
+              <div class="col-2 room_card_outer">
+                <button id="room_card_add">
+
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="/index.js"></script>
+  </body>
+</html>
