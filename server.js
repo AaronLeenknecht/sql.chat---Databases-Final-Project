@@ -4,11 +4,27 @@ var path = require("path");
 var bodyparser = require("body-parser");
 var server = require("http").createServer(app);
 var io = require("socket.io")(server);
+var maria = require("mariadb");
 
 server.listen(8080);
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
+
+var connection = maria.createConnection({
+  host: "classmysql.engr.oregonstate.edu",
+  user: "cs340_leenknea",
+  password: "Floppypenguin7",
+  database: "cs340_leenknea"
+});
+
+connection.connect(function(error) {
+  if (!!error) {
+    console.log("Error");
+  } else {
+    console.log("Connected");
+  }
+});
 
 io.on("connection", socket => {
   //
